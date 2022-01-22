@@ -35,7 +35,7 @@
 </style>
 
 <body>
-  <h1>1번째 고양이 가라사대</h1>
+
   <div id="app"></div>
 
 
@@ -68,10 +68,11 @@
       );
     }
 
-    function MainCard(){
+    function MainCard(props){
       return(
+      
         <div class="main-card">
-          <img src="https://cataas.com/cat/60b73094e04e18001194a309/says/react" alt="고양이" width="400" />
+          <img src={props.img} alt="고양이" width="400" />
           <button>🤍</button>
         </div>
       );
@@ -96,10 +97,18 @@
 
     }
 
+    const Title = (props) =>{
+    
+      return(
+        <h1>{props.children}</h1>
+      );
+    }
+
     const app =(
       <div>
+        <Title>첫번째 고양이 가라사대 </Title>
         <Form/>
-        <MainCard/>
+        <MainCard img="https://cataas.com/cat/60b73094e04e18001194a309/says/react" />
         <Favorites/>
       </div>
     );
